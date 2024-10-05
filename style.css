@@ -1,0 +1,301 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.menu div {
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu div hr {
+    margin: 0;
+    border: none;
+    border-top: 3px solid transparent; /* Default transparent */
+    transition: border-color 0.3s;
+}
+
+.menu div.active hr {
+    border-color: #178fff; /* Active line color */
+}
+
+.content {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content-item {
+    display: none; /* Hide all content by default */
+}
+
+.content-item.active {
+    display: block; /* Show only active content */
+}
+
+.logo {
+    max-width: 100px; /* Adjust logo size as needed */
+}
+
+.content {
+    max-width: 600px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff00;
+}
+.tweet-container {
+    border: 1px solid #E1E8ED;
+    padding: 15px;
+    border-radius: 5%;
+    margin-bottom: 20px;
+}
+.tweet-container:last-child {
+    border-bottom: none;
+}
+.tweet-header {
+    display: flex;
+    align-items: center;
+}
+.profile-link img {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+.username {
+    font-weight: bold;
+}
+.handle {
+    color: #657786;
+    font-size: 14px;
+}
+.tweet-content {
+    margin: 10px 0;
+    align = "left";
+}
+.tweet-image img, .video-container video {
+    width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #657786;
+    font-size: 14px;
+}
+.heart-checkbox {
+    display: inline-block;
+    cursor: pointer;
+}
+.heart {
+    width: 20px;
+    height: 20px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/6/6d/Filled_Heart.svg') no-repeat center center / cover;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px; /* Width of the sidenav */
+    position: fixed; /* Stay in place */
+    top: 0; /* Stay at the top */
+    left: -250px; /* Hide the sidenav by default */
+    background-color: #1A1B1F; /* Dark background */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s; /* Smooth transition for opening/closing */
+    padding-top: 20px;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+.sidenav.open {
+    left: 0; /* Show the sidenav when open */
+}
+.sidenav .tweet-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.sidenav .prof-logo {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.sidenav .user-info {
+    display: flex;
+    flex-direction: column;
+}
+.sidenav .username {
+    font-weight: bold;
+}
+.sidenav a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+    transition: background 0.3s;
+}
+.sidenav a:hover {
+    background-color: #2C2F33; /* Change color on hover */
+}
+#toggleBtn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #1DA1F2; /* Twitter-like button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure button is above sidenav */
+    font-size: 24px; /* Make the button larger */
+}
+.post-feed {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.post {
+    border: 1px solid #E1E8ED;
+    padding: 15px;
+    border-radius: 5%;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.post h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.post p {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Floating button */
+.floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #1DA1F2;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 36px;
+    cursor: pointer;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Popup box */
+.popup {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.popup.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.popup-header h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: #1DA1F2;
+}
+
+/* Write section */
+.write-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #FFFFFF;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    height: 150px;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    border-color: #1DA1F2;
+    background-color: #FFFFFF;
+}
+
+button.publish-button {
+    background-color: #1DA1F2;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button.publish-button:hover {
+    background-color: #1486c6;
+    box-shadow: #FFFFFF;
+}
